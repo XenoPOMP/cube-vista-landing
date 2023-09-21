@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {}
+body {
+  @apply bg-bg-base;
+}
 
 :root {
   font-size: 20px;

@@ -1,0 +1,12 @@
+@import "src/styles/templates";
+
+a.logo {
+  @extend %flexCenter;
+
+  @apply bg-primary font-semibold;
+
+  display: inline-flex;
+
+  font-size: 1.16em; // 1em = 35px
+  padding: 2rem 3rem;
+}

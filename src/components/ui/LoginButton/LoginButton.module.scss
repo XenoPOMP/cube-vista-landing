@@ -1,0 +1,13 @@
+a.login {
+  @apply bg-primary font-medium
+         inline-flex gap-[.66em] items-center
+         cursor-pointer;
+
+  padding: 2rem 3rem;
+
+  svg {
+    path {
+      @apply fill-font-light;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+nav.appNav {
+  flex-grow: 1;
+  align-self: center;
+
+  ul {
+    display: flex;
+    gap: 2em;
+    padding: 0 4rem;
+  }
+}
