@@ -1,1 +1,10 @@
-footer.appFooter {}
+footer.appFooter {
+  @apply
+    bg-footer-primary text-footer-secondary;
+
+  font-size: 1.25rem; // 1em = 25px
+
+  section.footerContainer {
+    @apply py-[1.6em];
+  }
+}

@@ -1,0 +1,15 @@
+@import "src/styles/templates";
+
+.subFooterWrapper {
+  @extend %notSelectable;
+
+  @apply
+    bg-subfooter-primary text-subfooter-secondary
+    py-[1.5em];
+
+  font-size: 1rem;
+
+  section.subFooter {
+
+  }
+}
