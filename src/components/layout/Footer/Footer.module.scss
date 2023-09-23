@@ -6,5 +6,14 @@ footer.appFooter {
 
   section.footerContainer {
     @apply py-[1.6em];
+
+    article.socialMediaLinks {
+      @apply border-footer-btn-font;
+
+      padding-top: 1.6em;
+      border-top-width: 1px;
+      display: flex;
+      gap: .8em;
+    }
   }
 }

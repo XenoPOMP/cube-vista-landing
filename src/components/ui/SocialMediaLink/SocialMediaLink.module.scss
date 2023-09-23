@@ -1,0 +1,27 @@
+@import "src/styles/templates";
+
+// 1em = 25px
+
+a.iconLink {
+  @extend %flexCenter;
+
+  @apply bg-footer-btn-bg border-footer-btn-font;
+
+  padding: .6em;
+  border-radius: 50%;
+  border-width: 1px;
+
+  svg {
+    width: 1em;
+    aspect-ratio: 1;
+
+    path {
+      @apply fill-footer-btn-font;
+    }
+
+    & > defs rect {
+      width: 1em;
+      aspect-ratio: 1;
+    }
+  }
+}
