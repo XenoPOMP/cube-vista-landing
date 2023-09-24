@@ -9,7 +9,9 @@ import type { SubFooterProps } from './SubFooter.props';
 const SubFooter: FC<SubFooterProps> = ({}) => {
   return (
     <div className={cn(styles.subFooterWrapper)}>
-      <UiContainer>Made in 2023 by XenoPOMP</UiContainer>
+      <UiContainer className={cn(styles.subFooter)}>
+        Made in 2023 by XenoPOMP
+      </UiContainer>
     </div>
   );
 };

@@ -50,13 +50,21 @@ const Footer: FC<FooterProps> = ({}) => {
 
           <section className={cn(styles.navBlock)}>
             <div className={cn(styles.navGroup)}>
-              <h3>Навигация</h3>
+              <header>
+                <h3>Навигация</h3>
+
+                <div className={cn(styles.divider)}></div>
+              </header>
 
               <Navbar variant={'footer'} />
             </div>
 
             <div className={cn(styles.navGroup)}>
-              <h3>Юр. информация</h3>
+              <header>
+                <h3>Юр. информация</h3>
+
+                <div className={cn(styles.divider)}></div>
+              </header>
 
               <Navbar variant={'footer'} linkArray={'legalInfo'} />
             </div>

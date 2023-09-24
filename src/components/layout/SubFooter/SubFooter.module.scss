@@ -9,6 +9,10 @@
 
   font-size: 1rem;
 
+  @media (max-width: 1432px) {
+    @apply py-[1em];
+  }
+
   section.subFooter {
 
   }

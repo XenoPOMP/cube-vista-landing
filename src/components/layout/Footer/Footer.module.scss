@@ -45,8 +45,22 @@ footer.appFooter {
           flex-direction: column;
           gap: 1em;
 
-          h3 {
-            opacity: .8;
+          header {
+            display: flex;
+            gap: 1em;
+
+            h3 {
+              opacity: .8;
+            }
+
+            .divider {
+              @apply bg-font-light bg-opacity-[.4];
+
+              height: 1px;
+              flex-grow: 1;
+              align-self: center;
+              display: none;
+            }
           }
         }
       }
@@ -73,6 +87,19 @@ footer.appFooter {
         section.navBlock {
           flex-direction: column;
           gap: 2.4em;
+          width: 100%;
+
+          .navGroup {
+            width: 100%;
+
+            header {
+              width: 100%;
+
+              .divider {
+                display: initial;
+              }
+            }
+          }
         }
       }
     }
