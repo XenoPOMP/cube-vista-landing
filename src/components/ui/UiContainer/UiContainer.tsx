@@ -1,4 +1,5 @@
 import { PropsWith } from '@xenopomp/advanced-types';
+
 import cn from 'classnames';
 import { CSSProperties, FC } from 'react';
 
@@ -18,7 +19,7 @@ const UiContainer: FC<UiContainerNestedProps> = ({
   className,
   id,
   style,
-  margin = '3rem',
+  margin,
   maxWidth,
 }) => {
   return (

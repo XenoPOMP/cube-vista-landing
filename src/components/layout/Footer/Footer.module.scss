@@ -61,4 +61,20 @@ footer.appFooter {
       gap: .8em;
     }
   }
+
+  @media (max-width: 1432px) {
+    font-size: clamp(18px, 1.746vw, 1.25rem);
+
+    section.footerContainer {
+      article.main {
+        flex-direction: column;
+        gap: 3.2em;
+
+        section.navBlock {
+          flex-direction: column;
+          gap: 2.4em;
+        }
+      }
+    }
+  }
 }
