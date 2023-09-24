@@ -1,0 +1,10 @@
+button.uiButton {
+  // 1em = 20px
+  background-color: red;
+  padding: 1em 1.5em;
+  font-weight: normal;
+
+  &.footerLike {
+    @apply bg-subfooter-primary text-subfooter-secondary;
+  }
+}

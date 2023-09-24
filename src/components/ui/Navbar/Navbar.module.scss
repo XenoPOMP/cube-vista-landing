@@ -1,10 +1,23 @@
 nav.appNav {
-  flex-grow: 1;
-  align-self: center;
+  &.headerStyle {
+    flex-grow: 1;
+    align-self: center;
 
-  ul {
-    display: flex;
-    gap: 3em;
-    padding: 0 4rem;
+    ul {
+      display: flex;
+      gap: 3em;
+      padding: 0 4rem;
+    }
+  }
+
+  &.footerStyle {
+    // 1em = 25px
+    font-weight: normal;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: .6em;
+    }
   }
 }

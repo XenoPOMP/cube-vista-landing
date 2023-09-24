@@ -7,6 +7,51 @@ footer.appFooter {
   section.footerContainer {
     @apply py-[1.6em];
 
+    article.main {
+      padding-bottom: 1.6em;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 1.6em;
+
+      section.branding {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6em;
+
+        h2 {
+          @apply font-semibold;
+
+          font-size: 1.4em;
+        }
+
+        button.playNowButton {
+          font-size: .8em;
+          font-weight: 500;
+
+          svg path {
+            @apply fill-subfooter-secondary;
+          }
+        }
+      }
+
+      section.navBlock {
+        display: inline-flex;
+        gap: 4em;
+        align-items: start;
+
+        .navGroup {
+          display: flex;
+          flex-direction: column;
+          gap: 1em;
+
+          h3 {
+            opacity: .8;
+          }
+        }
+      }
+    }
+
     article.socialMediaLinks {
       @apply border-footer-btn-font;
 
