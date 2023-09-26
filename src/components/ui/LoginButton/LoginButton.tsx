@@ -1,12 +1,16 @@
+import { PropsWith } from '@xenopomp/advanced-types';
+
 import cn from 'classnames';
 import { FC } from 'react';
 
 import styles from './LoginButton.module.scss';
 import type { LoginButtonProps } from './LoginButton.props';
 
-const LoginButton: FC<LoginButtonProps> = ({}) => {
+const LoginButton: FC<PropsWith<'className', LoginButtonProps>> = ({
+  className,
+}) => {
   return (
-    <a className={cn(styles.login)}>
+    <a className={cn(styles.login, className)}>
       <span>Войти</span>
 
       <svg

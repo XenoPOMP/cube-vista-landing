@@ -1,0 +1,60 @@
+@import "src/styles/templates";
+
+article.mobileMenuWrapper {
+  @apply px-[1.5rem];
+
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+  .iconWrapper {
+    @extend %flexCenter;
+
+    min-width: 1em;
+    z-index: 50;
+
+    svg {
+      @extend %notSelectable;
+
+      cursor: pointer;
+
+      &.opened {
+        width: 1em;
+      }
+
+      &.closed {
+        width: .65em;
+      }
+
+      path {
+        @apply fill-font-light;
+      }
+    }
+  }
+
+  .overlay {
+    @apply bg-secondary;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 45;
+    width: 100vw;
+    height: calc(100vh - 100%);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+
+    nav.menuNav {
+      @extend %scrollable;
+
+      flex-grow: 1;
+    }
+
+    a.loginButton {
+      @apply px-[1.5em] py-[1em];
+    }
+  }
+}

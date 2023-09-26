@@ -3,6 +3,7 @@ import { FC } from 'react';
 
 import LoginButton from '@/src/components/ui/LoginButton/LoginButton';
 import Logo from '@/src/components/ui/Logo/Logo';
+import MobileMenu from '@/src/components/ui/MobileMenu/MobileMenu';
 import Navbar from '@/src/components/ui/Navbar/Navbar';
 import UiContainer from '@/src/components/ui/UiContainer/UiContainer';
 
@@ -17,11 +18,13 @@ const Header: FC<HeaderProps> = ({}) => {
         maxWidth={'1920px'}
         className={cn('', styles.container)}
       >
-        <Logo />
+        <Logo className={cn(styles.headerLogoButton)} />
 
-        <Navbar />
+        <Navbar className={cn(styles.sideBlocks)} />
 
-        <LoginButton />
+        <LoginButton className={cn(styles.sideBlocks)} />
+
+        <MobileMenu className={cn(styles.mobileMenuWrapper)} />
       </UiContainer>
     </header>
   );

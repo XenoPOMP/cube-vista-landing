@@ -1,10 +1,40 @@
+@import "src/styles/templates";
+
 header.appHeader {
   @apply bg-secondary text-font-light;
 
   font-size: 1rem; // 1em = 20px
+  position: relative;
 
   section.container {
     height: 100%;
     display: flex;
+
+    .headerLogoButton {
+      z-index: 50;
+    }
+
+    .sideBlocks {}
+
+    .mobileMenuWrapper {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1372px) {
+    section.container {
+      .sideBlocks {
+        display: none;
+      }
+
+      .headerLogoButton {
+        font-size: 1em;
+        padding: .5em 1em;
+      }
+
+      .mobileMenuWrapper {
+        display: flex;
+      }
+    }
   }
 }

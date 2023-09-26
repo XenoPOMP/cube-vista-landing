@@ -1,4 +1,4 @@
-import { Defined } from '@xenopomp/advanced-types';
+import { Defined, PropsWith } from '@xenopomp/advanced-types';
 import { isUndefined } from '@xenopomp/advanced-utils';
 
 import cn from 'classnames';
@@ -8,13 +8,15 @@ import { FC, ReactNode } from 'react';
 import styles from './Navbar.module.scss';
 import type { NavbarProps } from './Navbar.props';
 
-const Navbar: FC<NavbarProps> = ({
+const Navbar: FC<PropsWith<'className', NavbarProps>> = ({
   variant = 'header',
   linkArray = 'main',
+  className,
 }) => {
   const styleVariants: Record<Extract<typeof variant, PropertyKey>, string> = {
     header: styles.headerStyle,
     footer: styles.footerStyle,
+    mobileMenu: styles.mobileMenuStyle,
   };
 
   const links: Record<
@@ -62,7 +64,8 @@ const Navbar: FC<NavbarProps> = ({
     <nav
       className={cn(
         styles.appNav,
-        !isUndefined(variant) ? styleVariants[variant] : ''
+        !isUndefined(variant) ? styleVariants[variant] : '',
+        className
       )}
     >
       <ul>

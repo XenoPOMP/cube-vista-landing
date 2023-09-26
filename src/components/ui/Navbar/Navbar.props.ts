@@ -1,4 +1,4 @@
 export interface NavbarProps {
-  variant?: 'header' | 'footer';
+  variant?: 'header' | 'footer' | 'mobileMenu';
   linkArray?: 'main' | 'legalInfo';
 }
