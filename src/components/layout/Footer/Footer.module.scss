@@ -80,6 +80,9 @@ footer.appFooter {
     font-size: clamp(18px, 1.746vw, 1.25rem);
 
     section.footerContainer {
+      padding-top: var(--margin);
+      padding-bottom: var(--margin);
+
       article.main {
         flex-direction: column;
         gap: 3.2em;
