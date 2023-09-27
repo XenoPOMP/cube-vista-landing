@@ -1,0 +1,61 @@
+section.aboutServer {
+  @apply py-[6em];
+
+  font-size: 1rem; // 1em = 20px
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--margin);
+
+  @media (max-width: 1116px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (max-width: 900px) {
+    padding-top: calc(var(--margin) * 2);
+    padding-bottom: calc(var(--margin) * 2);
+    gap: calc(var(--margin) * 2);
+  }
+
+  article.leftColon {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    h2 {
+      @apply font-extrabold text-[2.25em];
+    }
+
+    .textBlock {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      p {
+        line-height: 150%;
+      }
+    }
+  }
+
+  article.rightColon {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: start;
+
+    .mainBadge {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
+    }
+
+    .versionBadge {
+
+    }
+
+    b {
+      @apply font-semibold;
+    }
+  }
+}

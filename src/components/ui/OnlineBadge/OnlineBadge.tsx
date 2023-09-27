@@ -1,5 +1,7 @@
 'use client';
 
+import { PropsWith } from '@xenopomp/advanced-types';
+
 import cn from 'classnames';
 import { motion } from 'framer-motion';
 import { FC } from 'react';
@@ -7,13 +9,21 @@ import { FC } from 'react';
 import styles from './OnlineBadge.module.scss';
 import { OnlineBadgeProps } from './OnlineBadge.props';
 
-const OnlineBadge: FC<OnlineBadgeProps> = ({
+const OnlineBadge: FC<PropsWith<'className', OnlineBadgeProps>> = ({
   digitStyling,
   textStyling,
   isReversed,
+  className,
 }) => {
   return (
-    <div className={cn(styles.onlineBadge, !isReversed && 'flex-row-reverse')}>
+    <div
+      className={cn(
+        styles.onlineBadge,
+        !isReversed && 'flex-row-reverse',
+        'uppercase',
+        className
+      )}
+    >
       <motion.svg
         viewBox='0 0 10 11'
         fill='none'
@@ -30,14 +40,14 @@ const OnlineBadge: FC<OnlineBadgeProps> = ({
       </motion.svg>
 
       <span
-        className={cn(styles.text)}
+        className={cn(styles.text, textStyling?.className ?? '')}
         style={{
           fontWeight: textStyling?.fontWeight ?? 'normal',
           color: textStyling?.color ?? '',
         }}
       >
         <strong
-          className={cn(styles.digit)}
+          className={cn(styles.digit, digitStyling?.className ?? '')}
           style={{
             fontWeight: digitStyling?.fontWeight ?? 'normal',
             color: digitStyling?.color ?? '',
