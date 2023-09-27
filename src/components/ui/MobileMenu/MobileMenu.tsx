@@ -57,7 +57,7 @@ const MobileMenu: FC<PropsWith<'className', MobileMenuProps>> = ({
       <div
         className={cn(styles.iconWrapper)}
         onClick={() => {
-          // toggleMenuOpened();
+          toggleMenuOpened();
         }}
       >
         {isMenuOpened ? icons.opened : icons.closed}
