@@ -1,0 +1,23 @@
+@import "src/styles/templates";
+
+.onlineBadge {
+  @extend %flexCenter;
+
+  display: inline-flex;
+  font-size: 1em; // 1em = 20px
+  gap: .5em;
+
+  span.text {
+    strong.digit {
+
+    }
+  }
+
+  svg {
+    width: .5em;
+
+    circle {
+      @apply fill-btn-primary;
+    }
+  }
+}

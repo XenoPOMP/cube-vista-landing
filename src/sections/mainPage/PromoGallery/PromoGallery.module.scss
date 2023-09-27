@@ -1,0 +1,26 @@
+.galleryWrapper {
+  @apply bg-primary text-font-light;
+
+  font-size: 1rem; // 1em = 20px
+
+  section.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5em;
+
+    article.textBlock {
+      @apply py-[6em];
+
+      min-width: 100px;
+      background: red;
+    }
+
+    article.gifBlock {
+      height: 100%;
+    }
+
+    @media (max-width: 900px) {
+      --margin: .75rem !important;
+    }
+  }
+}

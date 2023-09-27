@@ -21,7 +21,14 @@ const UiContainer: FC<UiContainerNestedProps> = ({
   style,
   margin,
   maxWidth,
+  horizontalAlignment = 'default',
 }) => {
+  const alignmentClass: Record<typeof horizontalAlignment, string> = {
+    default: '',
+    left: cn(styles.align, styles.left),
+    right: cn(styles.align, styles.right),
+  };
+
   return (
     <section
       style={
@@ -31,7 +38,11 @@ const UiContainer: FC<UiContainerNestedProps> = ({
           ...style,
         } as CSSProperties
       }
-      className={cn(styles.uiContainer, className)}
+      className={cn(
+        styles.uiContainer,
+        alignmentClass[horizontalAlignment],
+        className
+      )}
       id={id}
     >
       {children}

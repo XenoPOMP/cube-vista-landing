@@ -6,6 +6,18 @@
   width: min(var(--max-container-width), calc(100% - 2 * var(--margin)));
   margin: 0 auto;
 
+  &.align {
+    &.left {
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    &.right {
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+
   @media (max-width: 900px) {
     --margin: 1.5rem;
   }
