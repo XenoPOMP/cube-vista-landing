@@ -1,18 +1,65 @@
+@import "src/styles/templates";
+
 .galleryWrapper {
   @apply bg-primary text-font-light;
 
   font-size: 1rem; // 1em = 20px
 
+  @media (max-width: 900px) {
+    font-size: .75rem;
+
+    section.container {
+      article.textBlock {
+        .button {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 473px) {
+    // font-size: .6rem;
+  }
+
   section.container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: .5em;
+    gap: calc(var(--margin) * .75);
+
+    @media (max-width: 1572px) {
+      display: initial;
+
+      article.textBlock {
+        padding: 0 calc(var(--margin) * 2);
+      }
+
+      article.gifBlock {
+        display: none;
+      }
+    }
 
     article.textBlock {
-      @apply py-[6em];
+      @apply py-[6em] flex flex-col gap-[4em] items-start;
 
       min-width: 100px;
-      background: red;
+
+      .heading {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        h1 {
+          @apply font-extrabold;
+
+          font-size: 2.5em;
+        }
+
+        p {
+
+        }
+      }
+
+      .button {}
     }
 
     article.gifBlock {

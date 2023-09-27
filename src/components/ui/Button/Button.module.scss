@@ -8,4 +8,8 @@ button.uiButton {
   &.footerLike {
     @apply bg-subfooter-primary text-subfooter-secondary;
   }
+
+  &.secondary {
+    @apply bg-btn-primary text-btn-secondary;
+  }
 }

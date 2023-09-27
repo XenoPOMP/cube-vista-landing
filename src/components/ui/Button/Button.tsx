@@ -21,6 +21,9 @@ const Button: FC<PropsWith<'children', ButtonProps>> = props => {
     footer: {
       className: styles.footerLike,
     },
+    secondary: {
+      className: styles.secondary,
+    },
   };
 
   return (
