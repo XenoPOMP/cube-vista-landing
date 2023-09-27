@@ -1,0 +1,130 @@
+@import "src/styles/templates";
+
+.sectionWrapper {
+  @apply border-font-dark border-opacity-[.15];
+
+  border-width: 1px;
+  font-size: 1rem; // 1em = 20px
+
+  @media (max-width: 888px) {
+    font-size: .85rem;
+  }
+
+  @media (max-width: 769px) {
+    font-size: .7rem;
+  }
+
+  section.keyFeatures {
+    @apply py-[6em];
+
+    h2 {
+      @apply font-semibold;
+
+      font-size: 1.5em;
+      margin-bottom: 3em;
+    }
+
+    .prosSection {
+      @apply flex flex-col gap-[3em];
+
+      article.pros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--margin);
+
+        .leftColon {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: start;
+          gap: 2em;
+
+          h3 {
+            @apply font-extrabold;
+
+            font-size: 2.25em;
+          }
+
+          .textBlock {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            p {
+              line-height: 150%;
+            }
+          }
+        }
+
+        .rightColon {
+          @extend %flexCenter;
+
+          @apply bg-primary;
+
+          padding: var(--margin);
+          height: 100%;
+        }
+
+        &.reversed {
+          .leftColon {
+            grid-column-start: 2;
+          }
+
+          .rightColon {
+            grid-row-start: 1;
+            grid-column-start: 1;
+            grid-column-end: 2;
+          }
+        }
+
+        @media (max-width: 1260px) {
+          --text-width: 1.5fr;
+          --image-width: 1fr;
+
+          grid-template-columns: var(--text-width) var(--image-width);
+
+          &.reversed {
+            grid-template-columns: var(--image-width) var(--text-width);
+          }
+        }
+
+        @media (max-width: 1064px) {
+          --text-width: 2fr;
+          --image-width: 1fr;
+        }
+
+        @media (max-width: 888px) {
+          --text-width: 1fr;
+          --image-width: 1fr;
+        }
+
+        @media (max-width: 600px) {
+          grid-template-columns: 1fr;
+
+          .rightColon {
+            @apply mx-auto;
+
+            width: 50%;
+          }
+
+          &.reversed {
+            grid-template-columns: 1fr;
+
+            .rightColon, .leftColon {
+              grid-column-start: unset !important;
+              grid-column-end: unset !important;
+              grid-row-start: unset !important;
+              grid-column: span 2 !important;
+            }
+          }
+        }
+
+        @media (max-width: 538px) {
+          .rightColon {
+            width: 75%;
+          }
+        }
+      }
+    }
+  }
+}
