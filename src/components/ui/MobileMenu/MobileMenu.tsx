@@ -1,6 +1,7 @@
 'use client';
 
 import { PropsWith } from '@xenopomp/advanced-types';
+import { isUndefined } from '@xenopomp/advanced-utils';
 
 import cn from 'classnames';
 import { motion } from 'framer-motion';
@@ -50,6 +51,10 @@ const MobileMenu: FC<PropsWith<'className', MobileMenuProps>> = ({
 
   useEffect(() => {
     // setIsBodyLocked(isMenuOpened);
+
+    if (!isUndefined(document)) {
+      document.body.style.overflowY = isMenuOpened ? 'hidden' : 'auto';
+    }
   }, [isMenuOpened]);
 
   return (
