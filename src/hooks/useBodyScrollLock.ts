@@ -9,7 +9,9 @@ const useBodyScrollLock = (): [
   toggle: () => void,
   set: ReturnType<typeof useBoolean>[2]
 ] => {
-  const bodyStyle = document?.body.style;
+  const doc: Document | undefined = document ?? undefined;
+
+  const bodyStyle = doc?.body.style;
 
   const [isLocked, toggleLock, setIsLocked] = useBoolean(
     (bodyStyle.overflowY as CSSProperties['overflowY']) === 'hidden'
