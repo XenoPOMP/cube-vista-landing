@@ -18,8 +18,8 @@ const MobileMenu: FC<PropsWith<'className', MobileMenuProps>> = ({
   className,
 }) => {
   const [isMenuOpened, toggleMenuOpened, setIsMenuOpened] = useBoolean(false);
-  const [isBodyScrollLocked, toggleBodyScrollLock, setIsBodyLocked] =
-    useBodyScrollLock();
+  // const [isBodyScrollLocked, toggleBodyScrollLock, setIsBodyLocked] =
+  //   useBodyScrollLock();
 
   const icons: Record<'opened' | 'closed', ReactNode> = {
     opened: (
@@ -49,7 +49,7 @@ const MobileMenu: FC<PropsWith<'className', MobileMenuProps>> = ({
   };
 
   useEffect(() => {
-    setIsBodyLocked(isMenuOpened);
+    // setIsBodyLocked(isMenuOpened);
   }, [isMenuOpened]);
 
   return (
@@ -57,7 +57,7 @@ const MobileMenu: FC<PropsWith<'className', MobileMenuProps>> = ({
       <div
         className={cn(styles.iconWrapper)}
         onClick={() => {
-          toggleMenuOpened();
+          // toggleMenuOpened();
         }}
       >
         {isMenuOpened ? icons.opened : icons.closed}
