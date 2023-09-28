@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import { FC } from 'react';
 
+import { AppConstants } from '@/app/app.constants';
 import Button from '@/src/components/ui/Button/Button';
 import OnlineBadge from '@/src/components/ui/OnlineBadge/OnlineBadge';
 import UiContainer from '@/src/components/ui/UiContainer/UiContainer';
@@ -34,7 +35,7 @@ const AboutServerSection: FC<AboutServerSectionProps> = ({}) => {
       <article className={cn(styles.rightColon)}>
         <div className={cn(styles.mainBadge)}>
           <p>
-            ip-адрес сервера: <b>play.server.club</b>
+            ip-адрес сервера: <b>{AppConstants.serverIpAddress}</b>
           </p>
 
           <Button
