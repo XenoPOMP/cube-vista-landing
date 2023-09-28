@@ -6,9 +6,12 @@ import { FC } from 'react';
 import styles from './Button.module.scss';
 import type { ButtonProps } from './Button.props';
 
-const Button: FC<PropsWith<'children', ButtonProps>> = props => {
-  const { children, className, variant = 'primary' } = props;
-
+const Button: FC<PropsWith<'children', ButtonProps>> = ({
+  children,
+  className,
+  variant = 'primary',
+  ...props
+}) => {
   const variantStyles: Record<
     typeof variant,
     {
