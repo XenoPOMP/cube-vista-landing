@@ -15,6 +15,26 @@
 
   svg {
     width: .5em;
+    animation: onlineCircleDingle infinite 1s;
+    animation-fill-mode: forwards;
+
+    @keyframes onlineCircleDingle {
+      0%, 100% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    //  animate={{
+    //    opacity: [0, 1, 0],
+    //  }}
+    //  transition={{
+    //    repeat: Infinity,
+    //    duration: 1.25,
+    //  }}
 
     circle {
       @apply fill-btn-primary;
