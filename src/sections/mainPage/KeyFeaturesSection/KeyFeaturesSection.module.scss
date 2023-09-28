@@ -122,6 +122,10 @@
         @media (max-width: 538px) {
           .rightColon {
             width: 100%;
+
+            img {
+              max-width: unset !important;
+            }
           }
         }
       }
