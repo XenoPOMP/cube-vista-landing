@@ -485,6 +485,11 @@ chalk@^2.4.2:
   optionalDependencies:
     fsevents "~2.3.2"
 
+chunk-arr@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/chunk-arr/-/chunk-arr-2.1.2.tgz#b04589dffce6139462630c39467ec70734854329"
+  integrity sha512-afzFnsHapxMpWHkvXiYdDzwSaoF5i8Z1VqHSTobKhDlFrnBs6+LH66RpV7yON06H4IZ5OVkTak9P+yGfccPdbQ==
+
 classnames@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"

@@ -40,4 +40,14 @@
       @apply fill-btn-primary;
     }
   }
+
+  &.isOffline {
+    svg {
+      animation: none;
+
+      circle {
+        @apply fill-gray-400;
+      }
+    }
+  }
 }
