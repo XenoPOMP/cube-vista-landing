@@ -1,22 +1,34 @@
-import { PropsWith } from '@xenopomp/advanced-types';
+import { AsyncFC, PropsWith } from '@xenopomp/advanced-types';
 
+import axios from 'axios';
 import cn from 'classnames';
 import { FC } from 'react';
+
+import { useServerQuery } from '@/src/hooks/useServerQuery';
+import formatQuantity from '@/src/utils/formatQuantity';
 
 import styles from './OnlineBadge.module.scss';
 import { OnlineBadgeProps } from './OnlineBadge.props';
 
-const OnlineBadge: FC<PropsWith<'className', OnlineBadgeProps>> = ({
+const OnlineBadge: AsyncFC<PropsWith<'className', OnlineBadgeProps>> = async ({
   digitStyling,
   textStyling,
   isReversed,
   className,
 }) => {
+  const { data } = await useServerQuery(
+    async () =>
+      await axios.get<{ isOnline: boolean; onlineCount: number }>(
+        `${process.env.API_URL}/online`
+      )
+  );
+
   return (
     <div
       className={cn(
         styles.onlineBadge,
         !isReversed && 'flex-row-reverse',
+        !(data?.data.isOnline ?? false) && styles.isOffline,
         'uppercase',
         className
       )}
@@ -32,16 +44,22 @@ const OnlineBadge: FC<PropsWith<'className', OnlineBadgeProps>> = ({
           color: textStyling?.color ?? '',
         }}
       >
-        <strong
-          className={cn(styles.digit, digitStyling?.className ?? '')}
-          style={{
-            fontWeight: digitStyling?.fontWeight ?? 'normal',
-            color: digitStyling?.color ?? '',
-          }}
-        >
-          100
-        </strong>{' '}
-        человек онлайн
+        {data?.data.isOnline ? (
+          <>
+            <strong
+              className={cn(styles.digit, digitStyling?.className ?? '')}
+              style={{
+                fontWeight: digitStyling?.fontWeight ?? 'normal',
+                color: digitStyling?.color ?? '',
+              }}
+            >
+              {formatQuantity(data?.data.onlineCount)}
+            </strong>{' '}
+            человек онлайн
+          </>
+        ) : (
+          <>сервер сейчас оффлайн</>
+        )}
       </span>
     </div>
   );
